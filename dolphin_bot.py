@@ -6,16 +6,16 @@ from op_dolphin_bot.constants import PROGRAM_NAME, PROGRAM_VERSION
 # CONFIGURATION START
 # ---
 # Copy and paste the URL from Slack's "Incoming WebHooks" Integration:
-SLACK_INCOMING_HOOK_URL = "https://hooks.slack.com/services/..."
+SLACK_INCOMING_HOOK_URL = os.environ.get('SLACK_INCOMING_HOOK_URL')
 
 # Your base URL:
-OP_BASE_URL = "https://YOUR.OPENPROJECT..."
+OP_BASE_URL = os.environ.get('OP_BASE_URL')
 
 # The ID of the project which activities are tracked. Use util/op_project_list.py if you aren't sure:
-OP_PROJECT_ID = 2
+OP_PROJECT_ID = os.environ.get('OP_PROJECT_ID')
 
 # Your RSS API Key. See "Account Settings -> Tokens" in OpenProject.
-OP_RSS_KEY = "****************************************"
+OP_RSS_KEY = os.environ.get('OP_RSS_KEY')
 
 # Specify elements you want to track. Recognizes everything except "cost_objects" and "time_entries" by default:
 OP_RSS_FILTER = ('work_packages', 'wiki_edits', 'news', 'documents', 'meetings')
